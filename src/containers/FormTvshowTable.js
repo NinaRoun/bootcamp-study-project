@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import connect from "react-redux/es/connect/connect";
 import { fetchTvshows } from '../actions'
 import TvshowItem from '../components/TvshowItem';
+import Pagination from '../components/Pagination';
 
-class TvshowTable extends Component {
+class FormTvshowTable extends Component {
 
     constructor(props) {
         super(props)
@@ -16,10 +17,10 @@ class TvshowTable extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(event) {
-        //console.log('current page is ', this.state.currentPage);
+    handleClick(page) {
+        //console.log('current page is ', this.state.currentPage););
         this.setState({
-            currentPage: Number(event.target.id)
+            currentPage: Number(page)
         })
     }
 
@@ -29,13 +30,15 @@ class TvshowTable extends Component {
 
     render() {
 
-        const { currentPage, showsPerPage } = this.state;
+        const {currentPage, showsPerPage} = this.state;
 
         const indexOfLastShow = currentPage * showsPerPage;  //6, 12, 18, ...
         const indexOfFirstShow = indexOfLastShow - showsPerPage; //0, 6, 12, ...
         const currentShows = this.props.tvshows.slice(indexOfFirstShow, indexOfLastShow); //here: per 6 on each page
 
-        const tvshowItems = this.props.tvshows && currentShows.map((tvshow, index) => <TvshowItem key={tvshow.id} tvshow={tvshow} />)
+        const tvshowItems = this.props.tvshows && currentShows.map(
+            (tvshow, index) => <TvshowItem key={tvshow.id} tvshow={tvshow}/>
+        );
 
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(this.props.tvshows.length / showsPerPage); i++) { //here: 4 pages
@@ -43,41 +46,33 @@ class TvshowTable extends Component {
         }
 
         const renderPageNumbers = pageNumbers.map(number => {
+            console.log(typeof number, typeof this.state.currentPage, number === this.state.currentPage);
             return (
-                <span
-                    key={ number }
-                    id={ number }
-                    onClick={ this.handleClick }
+                <Pagination
+                    key={number}
+                    id={number}
+                    number={number}
+                    onClick={this.handleClick}
                     className={number === this.state.currentPage ? "active" : ""}
-                >
-                    { number }
-                </span>
-            );
-        });
+                />)});
 
         return (
             <div className="mainTable">
                 <table>
                     <tbody>
 
-                    { tvshowItems }
+                    {tvshowItems}
 
                     </tbody>
                 </table>
 
                 <div id="page-numbers">
-                    { renderPageNumbers }
+                    {renderPageNumbers}
                 </div>
             </div>
         );
     }
 }
-
-TvshowTable.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    tvshows: PropTypes.array.isRequired,
-};
-
 
 const mapStateToProps = state => ({
     tvshows: state.tvshows
@@ -90,4 +85,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TvshowTable)
+)(FormTvshowTable, Pagination)

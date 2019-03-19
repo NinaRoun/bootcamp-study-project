@@ -1,5 +1,5 @@
 export const initialSate = {
-    tvshows: [],
+    tvshows: []
 };
 
 const movieReducer = (state = initialSate.tvshows, action) => {
