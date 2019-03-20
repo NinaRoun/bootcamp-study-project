@@ -1,8 +1,7 @@
 import { CriterionToSort } from '../actions';
 
 export const initialSate = {
-    tvshows: [],
-    criterion: CriterionToSort.SORT_BY_NAME
+    tvshows: []
 };
 
 const tvshowReducer = (state = initialSate.tvshows, action) => {

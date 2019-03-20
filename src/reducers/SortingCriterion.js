@@ -7,7 +7,8 @@ const SortingCriterion = (state = initialSate.tvshows, action) => {
     switch (action.type) {
         case 'SET_SORTING_CRITERION':
             return [
-                //state.slice().sort(sortByKey(action.payload))
+                ...state,
+                action.payload
             ];
         default:
             //return state.slice().sort(sortByKey('name')) //new tvshows come from action, should replace this

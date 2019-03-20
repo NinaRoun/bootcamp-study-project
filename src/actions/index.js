@@ -24,10 +24,10 @@ export const fetchTvshows = () => dispatch => {
     });
 }
 
-export const setSortingCriterion = () => (dispatch, criterion) => {
+export const setSortingCriterion = () => (dispatch, sortedTable) => {
     return dispatch({
         type: SET_SORTING_CRITERION,
-        payload: criterion
+        payload: sortedTable
     })
 }
 

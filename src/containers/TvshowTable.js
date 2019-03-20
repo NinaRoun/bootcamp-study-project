@@ -47,7 +47,7 @@ class TvshowTable extends Component {
         }
 
         const renderPageNumbers = pageNumbers.map(number => {
-            console.log(typeof number, typeof this.state.currentPage, number === this.state.currentPage);
+            //console.log(typeof number, typeof this.state.currentPage, number === this.state.currentPage);
             return (
                 <Pagination
                     key={number}
