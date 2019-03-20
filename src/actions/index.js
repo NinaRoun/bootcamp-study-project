@@ -1,4 +1,5 @@
-import { FETCH_TVSHOWS } from './types'
+import { FETCH_TVSHOWS } from './types';
+import { SET_SORTING_CRITERION } from './types';
 
 export const fetchTvshows = () => dispatch => {
 
@@ -21,6 +22,19 @@ export const fetchTvshows = () => dispatch => {
             payload: tvshows
         })
     });
+}
+
+export const setSortingCriterion = () => (dispatch, criterion) => {
+    return dispatch({
+        type: SET_SORTING_CRITERION,
+        payload: criterion
+    })
+}
+
+export const CriterionToSort = {
+    SORT_BY_NUMBER: 'SORT_BY_NUMBER',
+    SORT_BY_NAME: 'SORT_BY_NAME',
+    SORT_BY_RATE: 'SORT_BY_RATE'
 }
 
 

@@ -1,8 +1,11 @@
+import { CriterionToSort } from '../actions';
+
 export const initialSate = {
-    tvshows: []
+    tvshows: [],
+    criterion: CriterionToSort.SORT_BY_NAME
 };
 
-const movieReducer = (state = initialSate.tvshows, action) => {
+const tvshowReducer = (state = initialSate.tvshows, action) => {
     switch (action.type) {
         case 'FETCH_TVSHOWS':
             return [
@@ -15,5 +18,5 @@ const movieReducer = (state = initialSate.tvshows, action) => {
 
 }
 
-export default movieReducer
+export default tvshowReducer
 

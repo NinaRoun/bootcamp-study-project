@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import connect from "react-redux/es/connect/connect";
 import { fetchTvshows } from '../actions'
+import SortingCriteria from '../components/SortingCriteria';
 import TvshowItem from '../components/TvshowItem';
 import Pagination from '../components/Pagination';
 
-class FormTvshowTable extends Component {
+class TvshowTable extends Component {
 
     constructor(props) {
         super(props)
@@ -58,6 +59,9 @@ class FormTvshowTable extends Component {
 
         return (
             <div className="mainTable">
+
+                <SortingCriteria />
+
                 <table>
                     <tbody>
 
@@ -69,6 +73,7 @@ class FormTvshowTable extends Component {
                 <div id="page-numbers">
                     {renderPageNumbers}
                 </div>
+
             </div>
         );
     }
@@ -85,4 +90,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(FormTvshowTable, Pagination)
+)(TvshowTable, Pagination)

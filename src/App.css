@@ -54,6 +54,22 @@ th {
   padding: 10px 15px;
 }
 
+.sorting-criteria {
+    cursor: pointer;
+    float: left;
+    display: inline-block;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.sorting-criteria span {
+    padding: 8px 16px;
+}
+
+.sorting-criteria .active {
+    background-color: #D2B48C;
+}
+
 #page-numbers {
     cursor: pointer;
     float: right;

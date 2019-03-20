@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import FormTvshowTable from './containers/FormTvshowTable'
+
+import TvshowTable from './containers/TvshowTable'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
                 <h2>Most recommended TV shows</h2>
             </header>
 
-            <FormTvshowTable />
+            <TvshowTable />
         </div>
     );
   }
