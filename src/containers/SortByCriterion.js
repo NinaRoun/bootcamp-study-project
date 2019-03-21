@@ -5,17 +5,17 @@ import { CriterionToSort } from '../actions';
 
 const sortByKey = key => (a, b) => a[key] > b[key];
 
-const getSortedTable = (tvshows, criterion) => {
+const getSortedTable = (criterion) => {
     switch (criterion) {
         case CriterionToSort.SORT_BY_NUMBER:
-            console.log('clicked to sorted by number');
-            return tvshows.slice().sort(sortByKey('number'))
+            //console.log('clicked to sorted by number');
+            return 'number'
         case CriterionToSort.SORT_BY_NAME:
-            console.log('clicked to sorted by name');
-            return tvshows.slice().sort(sortByKey('name'))
+            //console.log('clicked to sorted by name');
+            return 'name'
         case CriterionToSort.SORT_BY_RATE:
-            console.log('clicked to sorted by rate');
-            return tvshows.slice().sort(sortByKey('rate'))
+            //console.log('clicked to sorted by rate');
+            return 'rate'
         default:
             throw new Error('Choose criterion to sort')
     }
@@ -30,9 +30,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     //console.log('from SortByCriterion, ', ownProps)  //sort by number
-    //onClick: () => dispatch(setSortingCriterion(ownProps.criterion))
-    onClick: () => setSortingCriterion(dispatch, getSortedTable(this.props.tvshows, ownProps.criterion))
-    //should send dispatch and a new tvshows list to action
+    //onClick: () => dispatch(setSortingCriterion(getSortedTable(ownProps.criterion)))
+    onClick: setSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
+    //should send dispatch and a criterion to sort to action
 })
 
 export default connect(

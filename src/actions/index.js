@@ -24,10 +24,11 @@ export const fetchTvshows = () => dispatch => {
     });
 }
 
-export const setSortingCriterion = () => (dispatch, sortedTable) => {
+export const setSortingCriterion = () => (dispatch, criterion) => {
+    //console.log('in action setSortingCriterion, got a criterion - ', criterion)
     return dispatch({
         type: SET_SORTING_CRITERION,
-        payload: sortedTable
+        payload: criterion
     })
 }
 
