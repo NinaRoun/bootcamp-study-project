@@ -35,7 +35,8 @@ export const setSortingCriterion = () => (dispatch, criterion) => {
 export const CriterionToSort = {
     SORT_BY_NUMBER: 'SORT_BY_NUMBER',
     SORT_BY_NAME: 'SORT_BY_NAME',
-    SORT_BY_RATE: 'SORT_BY_RATE'
+    SORT_BY_RATE: 'SORT_BY_RATE',
+    SORT_BY_DATE: 'SORT_BY_DATE'
 }
 
 
