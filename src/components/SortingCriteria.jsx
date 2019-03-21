@@ -5,13 +5,13 @@ import SortByCriterion from '../containers/SortByCriterion'
 const SortingCriteria = () => {
 
         return(
-            <div className="sorting-criteria">
+            <span className="sorting-criteria">
                 <strong>Sort by:</strong>
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_NUMBER}>Number</SortByCriterion>
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_NAME}>Title</SortByCriterion>
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_RATE}>Rate</SortByCriterion>
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_DATE}>First Air Date</SortByCriterion>
-            </div>
+            </span>
         )
 }
 

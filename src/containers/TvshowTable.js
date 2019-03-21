@@ -4,6 +4,8 @@ import { fetchTvshows } from '../actions'
 import SortingCriteria from '../components/SortingCriteria';
 import TvshowItem from '../components/TvshowItem';
 import Pagination from '../components/Pagination';
+import Search from '../components/Search';
+
 
 class TvshowTable extends Component {
 
@@ -11,7 +13,8 @@ class TvshowTable extends Component {
         super(props)
         this.state = {
             currentPage: 1,
-            showsPerPage: 6
+            showsPerPage: 6,
+            search: ""
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -21,6 +24,12 @@ class TvshowTable extends Component {
         //console.log('current page is ', this.state.currentPage););
         this.setState({
             currentPage: Number(page)
+        })
+    }
+
+    handleChange(event) {
+        this.setState({
+            search: event.target.value
         })
     }
 
@@ -36,7 +45,12 @@ class TvshowTable extends Component {
         const indexOfFirstShow = indexOfLastShow - showsPerPage; //0, 6, 12, ...
         const currentShows = this.props.tvshows.slice(indexOfFirstShow, indexOfLastShow); //here: per 6 on each page
 
-        const tvshowItems = this.props.tvshows && currentShows.map(
+        const tvshowItems = this.props.tvshows && currentShows
+            .filter(tvshow => !this.state.search ||
+                tvshow.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1 ||
+                tvshow.overview.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
+            )
+            .map(
             (tvshow, index) => <TvshowItem key={tvshow.id} tvshow={tvshow}/>
         );
 
@@ -59,7 +73,10 @@ class TvshowTable extends Component {
         return (
             <div className="mainTable">
 
-                <SortingCriteria />
+                <div className="intro">
+                    <SortingCriteria />
+                    < Search onChange={this.handleChange.bind(this)}/>
+                </div>
 
                 <table>
                     <tbody>

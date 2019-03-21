@@ -58,16 +58,20 @@ th {
     cursor: pointer;
     float: left;
     display: inline-block;
-    padding-bottom: 20px;
     padding-left: 30px;
 }
 
 .sorting-criteria span {
-    padding: 8px 16px;
+    padding: 0 16px;
 }
 
 .sorting-criteria .active {
     background-color: #D2B48C;
+}
+
+.sorting-criteria > *,
+.search-input > label {
+    line-height: 2em;
 }
 
 #page-numbers {
@@ -83,4 +87,19 @@ th {
 
 #page-numbers .active {
     background-color: #D2B48C;
+}
+
+.intro {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-input {
+    float: right;
+    padding-right: 30px;
+}
+
+.search-input-item {
+    padding: 0 16px;
 }
