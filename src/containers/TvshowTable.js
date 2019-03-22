@@ -14,7 +14,8 @@ class TvshowTable extends Component {
         this.state = {
             currentPage: 1,
             showsPerPage: 6,
-            search: ""
+            search: "",
+            pageNumbers: []
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -31,10 +32,35 @@ class TvshowTable extends Component {
         this.setState({
             search: event.target.value
         })
+
+        const pageNumbers = [];
+        const tableItems = document.getElementsByTagName('tr');
+        console.log('length ' + tableItems.length);
+        console.log('search = ' + this.state.search);
+        for (let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++) {
+            pageNumbers.push(i);
+        }
+        this.setState({
+            pageNumbers
+        })
+
     }
 
     componentWillMount() {
         fetchTvshows()(this.props.dispatch);
+    }
+
+    countPages() {
+        const pageNumbers = [];
+        const tableItems = document.getElementsByTagName('tr');
+            console.log('length ' + tableItems.length);
+            console.log('search = ' + this.state.search);
+            for (let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++) {
+                pageNumbers.push(i);
+            }
+        this.setState({
+                    pageNumbers
+                })
     }
 
     render() {
@@ -55,12 +81,13 @@ class TvshowTable extends Component {
         );
 
         const pageNumbers = [];
+        //for !this.state.search
+        console.log('no search')
         for (let i = 1; i <= Math.ceil(this.props.tvshows.length / showsPerPage); i++) { //here: 4 pages
             pageNumbers.push(i);
         }
 
-        const renderPageNumbers = pageNumbers.map(number => {
-            //console.log(typeof number, typeof this.state.currentPage, number === this.state.currentPage);
+        const renderPageNumbers = !this.state.search.length ? pageNumbers.map(number => {
             return (
                 <Pagination
                     key={number}
@@ -68,7 +95,16 @@ class TvshowTable extends Component {
                     number={number}
                     onClick={this.handleClick}
                     className={number === this.state.currentPage ? "active" : ""}
-                />)});
+                />)}) :
+            this.state.pageNumbers.map(number => {
+                return (
+                    <Pagination
+                        key={number}
+                        id={number}
+                        number={number}
+                        onClick={this.handleClick}
+                        className={number === this.state.currentPage ? "active" : ""}
+                    />)})
 
         return (
             <div className="mainTable">
@@ -107,3 +143,11 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(TvshowTable, Pagination)
+
+//не могу сделать нормальную пагинацию, уже всяко разно проовала. Думала о такой логике: для search есть handleChange. Каждый раз, когда происходит изменение, происходит перерасчет страниц.
+//хотела подсчитывать количество тегов tr и делать что-то вроде:
+//const tableItems = document.getElementsByTagName('tr');
+//     for (let i = 1; i <= Math.ceil(tableItems.length / showsPerPage); i++) {
+//         pageNumbers.push(i);
+//     }
+//но тогда придется pageNumbers держать в state , выщитывая количество страниц в первый раз, тоже

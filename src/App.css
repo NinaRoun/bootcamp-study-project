@@ -103,3 +103,7 @@ th {
 .search-input-item {
     padding: 0 16px;
 }
+
+.red-highlighting {
+    background-color: #D2B48C;
+}

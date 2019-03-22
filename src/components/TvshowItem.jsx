@@ -1,8 +1,12 @@
 import React from 'react';
 
-const TvshowItem = ({tvshow}) => {
+import PropTypes from "prop-types";
+
+const TvshowItem = ({tvshow, search}) => {
 
     const imgSrc = 'https://image.tmdb.org/t/p/w200' + tvshow.poster_path;
+    //const regexp = new RegExp(search, 'g');
+    //console.log('regexp', regexp);
 
     return (
         <tr>
@@ -26,6 +30,11 @@ const TvshowItem = ({tvshow}) => {
     );
 }
 
+TvshowItem.propTypes = {
+    tvshow: PropTypes.object.isRequired
+}
+
 export default TvshowItem;
 
-//got through const objResult = JSON.parse(result) then objResult.results, array of objects
+//{ search ? tvshow.name.replace(regexp, '<span className="red-highlighting">' + {search} + '</span>') : tvshow.name }
+//'<span class="smallcaps">' + value + '</span>'

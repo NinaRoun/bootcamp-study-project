@@ -1,6 +1,5 @@
 import React from 'react';
-import { CriterionToSort } from '../actions';
-import SortByCriterion from '../containers/SortByCriterion'
+import PropTypes from "prop-types";
 
 const Search = ({ onChange }) => {
 
@@ -10,6 +9,10 @@ const Search = ({ onChange }) => {
                 <input type="search" onChange={onChange}/>
             </span>
         )
+}
+
+Search.propTypes = {
+    onChange: PropTypes.func.isRequired
 }
 
 export default Search;
