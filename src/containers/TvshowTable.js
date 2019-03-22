@@ -33,17 +33,6 @@ class TvshowTable extends Component {
             search: event.target.value
         })
 
-        const pageNumbers = [];
-        const tableItems = document.getElementsByTagName('tr');
-        console.log('length ' + tableItems.length);
-        console.log('search = ' + this.state.search);
-        for (let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++) {
-            pageNumbers.push(i);
-        }
-        this.setState({
-            pageNumbers
-        })
-
     }
 
     componentWillMount() {
@@ -96,7 +85,7 @@ class TvshowTable extends Component {
                     onClick={this.handleClick}
                     className={number === this.state.currentPage ? "active" : ""}
                 />)}) :
-            this.state.pageNumbers.map(number => {
+            document.getElementsByTagName('tr').map(number => {
                 return (
                     <Pagination
                         key={number}
@@ -144,10 +133,8 @@ export default connect(
     mapDispatchToProps
 )(TvshowTable, Pagination)
 
-//не могу сделать нормальную пагинацию, уже всяко разно проовала. Думала о такой логике: для search есть handleChange. Каждый раз, когда происходит изменение, происходит перерасчет страниц.
-//хотела подсчитывать количество тегов tr и делать что-то вроде:
-//const tableItems = document.getElementsByTagName('tr');
-//     for (let i = 1; i <= Math.ceil(tableItems.length / showsPerPage); i++) {
-//         pageNumbers.push(i);
-//     }
-//но тогда придется pageNumbers держать в state , выщитывая количество страниц в первый раз, тоже
+//не могу сделать нормальную пагинацию, уже всяко разно пробовала. Думала о такой логике: Каждый раз, когда происходит изменение в search, происходит перерасчет страниц.
+//думала поставить условие в renderPageNumbers, что если !this.search.length, то кол-во страниц подсчитывается исходя из общего числа tvshows
+//, а если в search что-то есть, то подчитывать исходя из кол-ва тегов tr:
+//пока выдает ошибку
+//се это дело находится в containers/tvshowTable -> renderPageNumbers
