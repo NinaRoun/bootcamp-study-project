@@ -56,15 +56,17 @@ class TvshowTable extends Component {
 
         const {currentPage, showsPerPage} = this.state;
 
+        const allShows = !this.state.search ? this.props.tvshows : this.props.tvshows.filter(tvshow => !this.state.search ||
+            tvshow.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1 ||
+            tvshow.overview.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
+        );
+        //console.log('all shows', allShows)
+
         const indexOfLastShow = currentPage * showsPerPage;  //6, 12, 18, ...
         const indexOfFirstShow = indexOfLastShow - showsPerPage; //0, 6, 12, ...
-        const currentShows = this.props.tvshows.slice(indexOfFirstShow, indexOfLastShow); //here: per 6 on each page
+        const currentShows = allShows.slice(indexOfFirstShow, indexOfLastShow); //here: per 6 on each page
 
         const tvshowItems = this.props.tvshows && currentShows
-            .filter(tvshow => !this.state.search ||
-                tvshow.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1 ||
-                tvshow.overview.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
-            )
             .map(
             (tvshow, index) => <TvshowItem key={tvshow.id} tvshow={tvshow}/>
         );
@@ -72,11 +74,11 @@ class TvshowTable extends Component {
         const pageNumbers = [];
         //for !this.state.search
         console.log('no search')
-        for (let i = 1; i <= Math.ceil(this.props.tvshows.length / showsPerPage); i++) { //here: 4 pages
+        for (let i = 1; i <= Math.ceil(allShows.length / showsPerPage); i++) { //here: 4 pages
             pageNumbers.push(i);
         }
 
-        const renderPageNumbers = !this.state.search.length ? pageNumbers.map(number => {
+        const renderPageNumbers = pageNumbers.map(number => {
             return (
                 <Pagination
                     key={number}
@@ -84,16 +86,7 @@ class TvshowTable extends Component {
                     number={number}
                     onClick={this.handleClick}
                     className={number === this.state.currentPage ? "active" : ""}
-                />)}) :
-            document.getElementsByTagName('tr').map(number => {
-                return (
-                    <Pagination
-                        key={number}
-                        id={number}
-                        number={number}
-                        onClick={this.handleClick}
-                        className={number === this.state.currentPage ? "active" : ""}
-                    />)})
+                />)})
 
         return (
             <div className="mainTable">
@@ -133,8 +126,3 @@ export default connect(
     mapDispatchToProps
 )(TvshowTable, Pagination)
 
-//не могу сделать нормальную пагинацию, уже всяко разно пробовала. Думала о такой логике: Каждый раз, когда происходит изменение в search, происходит перерасчет страниц.
-//думала поставить условие в renderPageNumbers, что если !this.search.length, то кол-во страниц подсчитывается исходя из общего числа tvshows
-//, а если в search что-то есть, то подчитывать исходя из кол-ва тегов tr:
-//пока выдает ошибку
-//се это дело находится в containers/tvshowTable -> renderPageNumbers
