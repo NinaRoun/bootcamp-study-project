@@ -37,24 +37,19 @@ class TvshowTable extends Component {
 
     componentWillMount() {
         fetchTvshows()(this.props.dispatch);
-    }
-
-    countPages() {
-        const pageNumbers = [];
-        const tableItems = document.getElementsByTagName('tr');
-            console.log('length ' + tableItems.length);
-            console.log('search = ' + this.state.search);
-            for (let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++) {
-                pageNumbers.push(i);
-            }
-        this.setState({
-                    pageNumbers
-                })
+        let pageNumbers = [];
+        const tableItems = document.getElementsByTagName("tr");
+        console.log('tableItems length = ', tableItems.length);
+        console.log('search ', this.state.search);
+        for(let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++){
+            pageNumbers.push(i);
+        }
+        this.setState({pageNumbers});
     }
 
     render() {
 
-        const {currentPage, showsPerPage} = this.state;
+        const {currentPage, showsPerPage, search} = this.state;
 
         const allShows = !this.state.search ? this.props.tvshows : this.props.tvshows.filter(tvshow => !this.state.search ||
             tvshow.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1 ||
@@ -68,12 +63,10 @@ class TvshowTable extends Component {
 
         const tvshowItems = this.props.tvshows && currentShows
             .map(
-            (tvshow, index) => <TvshowItem key={tvshow.id} tvshow={tvshow}/>
+            (tvshow, index) => <TvshowItem key={tvshow.id} tvshow={tvshow} search={search}/>
         );
 
         const pageNumbers = [];
-        //for !this.state.search
-        console.log('no search')
         for (let i = 1; i <= Math.ceil(allShows.length / showsPerPage); i++) { //here: 4 pages
             pageNumbers.push(i);
         }
