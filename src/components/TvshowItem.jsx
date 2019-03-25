@@ -14,12 +14,21 @@ const TvshowItem = ({tvshow, search}) => {
     // search && console.log('regexp', regexp);
 
     const searchEscaped = search.replace(/[\\[.+*?(){|^$]/g, "\\$&");
-    const arr = tvshow.overview.split(new RegExp(searchEscaped, "i"));
-    let result = [];
-    let symbolsParsed = 0;
-    for(let i = 0; i < arr.length; i++) {
-        result.push(arr[i]);
-        result.push((<span class="red-highlighting">{tvshow.overview.substr(arr[i].length + symbolsParsed, search.length)}</span>))
+    const getResultWithSearch = (searchedArea) => {
+
+        const arr = searchedArea.split(new RegExp(searchEscaped, "i"));
+        //let resultSearch = [];
+
+
+        let symbolsParsed = 0;
+        let result = [];
+        for(let i = 0; i < arr.length; i++) {
+            result.push(arr[i]);
+            result.push((<span key={i} className="red-highlighting">{searchedArea.substr(arr[i].length + symbolsParsed, search.length)}</span>));
+            symbolsParsed += (arr[i].length + search.length);
+        }
+        return result;
+
     }
 
     return (
@@ -28,10 +37,10 @@ const TvshowItem = ({tvshow, search}) => {
             <th> № { tvshow.id } </th>
 
             <th>
-                <h2> { search ? tvshow.name : tvshow.name } </h2>
+                <h2> { getResultWithSearch(tvshow.name) } </h2>
                 <h3> Country: { tvshow.origin_country } </h3>
                 <h3> Original Language: { tvshow.original_language } </h3>
-                <p> { tvshow.overview } </p>
+                <p> { getResultWithSearch(tvshow.overview) } </p>
             </th>
 
             <th> <img src={imgSrc} alt={tvshow.name}/> </th>

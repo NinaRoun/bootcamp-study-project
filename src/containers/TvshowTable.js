@@ -37,14 +37,14 @@ class TvshowTable extends Component {
 
     componentWillMount() {
         fetchTvshows()(this.props.dispatch);
-        let pageNumbers = [];
-        const tableItems = document.getElementsByTagName("tr");
-        console.log('tableItems length = ', tableItems.length);
-        console.log('search ', this.state.search);
-        for(let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++){
-            pageNumbers.push(i);
-        }
-        this.setState({pageNumbers});
+        // let pageNumbers = [];
+        // const tableItems = document.getElementsByTagName("tr");
+        // console.log('tableItems length = ', tableItems.length);
+        // console.log('search ', this.state.search);
+        // for(let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++){
+        //     pageNumbers.push(i);
+        // }
+        // this.setState({pageNumbers});
     }
 
     render() {
