@@ -5,6 +5,7 @@ import SortingCriteria from '../components/SortingCriteria';
 import TvshowItem from '../components/TvshowItem';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
+import style from '../stylesheets/main.styl';
 
 
 class TvshowTable extends Component {
@@ -78,13 +79,13 @@ class TvshowTable extends Component {
                     id={number}
                     number={number}
                     onClick={this.handleClick}
-                    className={number === this.state.currentPage ? "active" : ""}
+                    className={number === this.state.currentPage ? style.active : ""}
                 />)})
 
         return (
-            <div className="mainTable">
+            <div className={style.mainTable}>
 
-                <div className="intro">
+                <div className={style.options}>
                     <SortingCriteria />
                     < Search onChange={this.handleChange.bind(this)}/>
                 </div>
@@ -97,7 +98,7 @@ class TvshowTable extends Component {
                     </tbody>
                 </table>
 
-                <div id="page-numbers">
+                <div id={style.pageNumbers}>
                     {renderPageNumbers}
                 </div>
 

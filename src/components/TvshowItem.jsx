@@ -1,5 +1,5 @@
 import React from 'react';
-
+import style from '../stylesheets/main.styl';
 import PropTypes from "prop-types";
 
 const TvshowItem = ({tvshow, search}) => {
@@ -24,7 +24,7 @@ const TvshowItem = ({tvshow, search}) => {
         let result = [];
         for(let i = 0; i < arr.length; i++) {
             result.push(arr[i]);
-            result.push((<span key={i} className="red-highlighting">{searchedArea.substr(arr[i].length + symbolsParsed, search.length)}</span>));
+            result.push((<span key={i} className={style.searchHighlighting}>{searchedArea.substr(arr[i].length + symbolsParsed, search.length)}</span>));
             symbolsParsed += (arr[i].length + search.length);
         }
         return result;
@@ -59,6 +59,3 @@ TvshowItem.propTypes = {
 
 export default TvshowItem;
 
-//{ search ? tvshow.name.replace(regexp, '<span className="red-highlighting">' + {search} + '</span>') : tvshow.name }
-//'<span class="smallcaps">' + value + '</span>'
-//search ? tvshow.overview.split(search).join(<span className="red-highlighting">search</span>) : tvshow.overview

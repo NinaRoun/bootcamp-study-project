@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const Pagination = ({ onClick, className, number}) => {
 
@@ -20,5 +20,3 @@ Pagination.propTypes = {
 }
 
 export default Pagination;
-
-//got through const objResult = JSON.parse(result) then objResult.results, array of objects

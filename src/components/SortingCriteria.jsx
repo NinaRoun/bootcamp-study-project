@@ -1,11 +1,12 @@
 import React from 'react';
 import { CriterionToSort } from '../actions';
 import SortByCriterion from '../containers/SortByCriterion'
+import style from '../stylesheets/main.styl';
 
 const SortingCriteria = () => {
 
         return(
-            <span className="sorting-criteria">
+            <span className={style.sortingCriteria}>
                 <strong>Sort by:</strong>
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_NUMBER}>Number</SortByCriterion>
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_NAME}>Title</SortByCriterion>
