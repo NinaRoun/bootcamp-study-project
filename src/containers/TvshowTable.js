@@ -5,6 +5,7 @@ import SortingCriteria from '../components/SortingCriteria';
 import TvshowItem from '../components/TvshowItem';
 import Pagination from '../components/Pagination';
 import Search from '../components/Search';
+import Loading from '../components/Loading';
 import style from '../stylesheets/main.styl';
 
 
@@ -16,7 +17,7 @@ class TvshowTable extends Component {
             currentPage: 1,
             showsPerPage: 6,
             search: "",
-            pageNumbers: []
+            pageNumbers: [],
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -51,6 +52,7 @@ class TvshowTable extends Component {
     render() {
 
         const {currentPage, showsPerPage, search} = this.state;
+        console.log(this.props);
 
         const allShows = !this.state.search ? this.props.tvshows : this.props.tvshows.filter(tvshow => !this.state.search ||
             tvshow.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1 ||
@@ -82,25 +84,35 @@ class TvshowTable extends Component {
                     className={number === this.state.currentPage ? style.active : ""}
                 />)})
 
+        const renderLoading = () => {
+            return <div>Loading...</div>
+        }
+
         return (
             <div className={style.mainTable}>
 
-                <div className={style.options}>
-                    <SortingCriteria />
-                    < Search onChange={this.handleChange.bind(this)}/>
-                </div>
+                { this.props.isLoading ? <Loading /> :
 
-                <table>
-                    <tbody>
+                    <div>
+                        <div className={style.options}>
+                            <SortingCriteria />
+                            < Search onChange={this.handleChange.bind(this)}/>
+                        </div>
 
-                    {tvshowItems}
+                        <table>
+                            <tbody>
 
-                    </tbody>
-                </table>
+                            {tvshowItems}
 
-                <div id={style.pageNumbers}>
-                    {renderPageNumbers}
-                </div>
+                            </tbody>
+                        </table>
+
+                        <div id={style.pageNumbers}>
+                            {renderPageNumbers}
+                        </div>
+                    </div>
+
+                }
 
             </div>
         );
@@ -108,7 +120,9 @@ class TvshowTable extends Component {
 }
 
 const mapStateToProps = state => ({
-    tvshows: state.tvshows
+    tvshows: state.tvshows,
+    isLoading: state.isLoading,
+    error: state.error
 });
 
 const mapDispatchToProps = dispatch => ({

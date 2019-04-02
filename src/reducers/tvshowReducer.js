@@ -1,20 +1,18 @@
-export const initialSate = {
+
+export const initialState = {
     tvshows: [],
-    //error: false
+    error: "",
+    isLoading: true,
 };
-
-//const sortByKey = key => (a, b) => a[key] > b[key];
-
-const tvshowReducer = (state = initialSate.tvshows, action) => {
+export const tvshowReducer = (state = initialState.tvshows, action) => {
     switch (action.type) {
+
         case 'FETCH_TVSHOWS':
             return [
                 ...state,
                 ...action.payload
-                //tvshows: [...action.payload.data],
-                //error: action.payload.data
-                //...action.payload.data
             ];
+
         case 'SET_SORTING_CRITERION':
             //console.log('in reducer to sort, action.payload = ', action.payload);
             const newState = state.slice(0);
@@ -42,7 +40,25 @@ const tvshowReducer = (state = initialSate.tvshows, action) => {
 
 }
 
-export default tvshowReducer
+export const isLoading = (state = initialState.isLoading, action) => {
+    switch (action.type){
+        case 'LOADING_STATE':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+export const fetchFailure = (state = initialState.error, action) => {
+    switch (action.type){
+        case 'FETCH_FAILURE':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+// export default tvshowReducer
 
 
 
