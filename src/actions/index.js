@@ -3,7 +3,7 @@ import { SET_SORTING_CRITERION } from './types';
 import { FETCH_FAILURE, LOADING_STATE } from './types';
 import axios from 'axios';
 
-const apiURL = "https://api.themoviedb.org/3/tv/popular?api_key=eaa4854fc14c0423809d014974235e94&language=en-US&page=1";
+const apiURL = "https://api.themoviedb.org/3/tv/popular?api_key=e4854fc14c0423809d014974235e94&language=en-US&page=1";
 const errorMsg = "An error has occurred while sending the request!";
 
 export const fetchTvshows = () => dispatch => {

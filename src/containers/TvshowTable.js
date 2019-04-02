@@ -7,6 +7,7 @@ import Pagination from '../components/Pagination';
 import Search from '../components/Search';
 import Loading from '../components/Loading';
 import style from '../stylesheets/main.styl';
+import Error from '../components/Error';
 
 
 class TvshowTable extends Component {
@@ -84,19 +85,15 @@ class TvshowTable extends Component {
                     className={number === this.state.currentPage ? style.active : ""}
                 />)})
 
-        const renderLoading = () => {
-            return <div>Loading...</div>
-        }
-
         return (
             <div className={style.mainTable}>
 
-                { this.props.isLoading ? <Loading /> :
+                {this.props.isLoading ? <Loading /> : this.props.error ? <Error error={this.props.error} /> :
 
                     <div>
                         <div className={style.options}>
                             <SortingCriteria />
-                            < Search onChange={this.handleChange.bind(this)}/>
+                            <Search onChange={this.handleChange.bind(this)}/>
                         </div>
 
                         <table>
