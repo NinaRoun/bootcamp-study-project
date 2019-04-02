@@ -1,5 +1,6 @@
 export const initialSate = {
-    tvshows: []
+    tvshows: [],
+    //error: false
 };
 
 //const sortByKey = key => (a, b) => a[key] > b[key];
@@ -10,6 +11,9 @@ const tvshowReducer = (state = initialSate.tvshows, action) => {
             return [
                 ...state,
                 ...action.payload
+                //tvshows: [...action.payload.data],
+                //error: action.payload.data
+                //...action.payload.data
             ];
         case 'SET_SORTING_CRITERION':
             //console.log('in reducer to sort, action.payload = ', action.payload);
@@ -39,5 +43,7 @@ const tvshowReducer = (state = initialSate.tvshows, action) => {
 }
 
 export default tvshowReducer
+
+
 
 
