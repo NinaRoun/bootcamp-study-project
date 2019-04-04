@@ -33,7 +33,7 @@ class TvshowTable extends Component {
 
     handleChange(event) {
         this.setState({
-            search: event.target.value
+            search: event.currentTarget.value
         })
 
     }
