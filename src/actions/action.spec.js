@@ -1,13 +1,21 @@
-import { fetchDataResults, fetchFailure, setLoadingState, setSortingCriterion } from '../reducers/index';
 import * as types from '../actions/types';
-import { fetchTvshows, setSortingCriterion } from './index';
+import { fetchDataResults, fetchFailure, setLoadingState, setSortingCriterion } from './index';
 
 describe("tvshows actions", () => {
+
+    it("fetchDataResults", () => {
+        const expectedAction = {
+            type: types.FETCH_TVSHOWS,
+            payload: [1, 2, 3]
+        }
+
+        expect(fetchDataResults(expectedAction.payload)).toEqual(expectedAction)
+    });
 
     it("fetchFailure", () => {
         const expectedAction = {
             type: types.FETCH_FAILURE,
-            payload: "500 server error"
+            payload: "An error has occurred while sending the request!"
         }
 
         expect(fetchFailure(expectedAction.payload)).toEqual(expectedAction)
@@ -16,7 +24,7 @@ describe("tvshows actions", () => {
     it("setLoadingState", () => {
         const expectedAction = {
             type: types.LOADING_STATE,
-            payload: "false"
+            payload: false
         }
 
         expect(setLoadingState(expectedAction.payload)).toEqual(expectedAction)

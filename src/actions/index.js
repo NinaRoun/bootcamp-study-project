@@ -19,6 +19,11 @@ export const setLoadingState = () => ({
     payload: false
 })
 
+export const setSortingCriterion = (criterion) => ({
+    type: types.SET_SORTING_CRITERION,
+    payload: criterion
+})
+
 export const fetchTvshows = () => dispatch => {
     axios.get(apiURL)
         .then( response => {
@@ -37,12 +42,9 @@ export const fetchTvshows = () => dispatch => {
 
 }
 
-export const setSortingCriterion = () => (dispatch, criterion) => {
+export const fetchSortingCriterion = () => (dispatch, criterion) => {
     //console.log('in action setSortingCriterion, got a criterion - ', criterion)
-    return dispatch({
-        type: types.SET_SORTING_CRITERION,
-        payload: criterion
-    })
+    return dispatch(setSortingCriterion(criterion))
 }
 
 export const CriterionToSort = {

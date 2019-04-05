@@ -1,28 +1,18 @@
-import { tvshowReducer } from './index';
+import { tvshowReducer, isLoading, fetchFailure } from './tvshowReducer';
 import { initialState } from './tvshowReducer';
 import * as types from '../actions/types';
-//import FETCH_TVSHOWS, SET_SORTING_CRITERION, FETCH_FAILURE, LOADING_STATE
-// const sum = (a, b) => {
-//     console.log('in sum a + b');
-//     return a + b;
-// }
-//
-// describe('app tests', () => {
-//     it('sum test', () => {
-//         expect(sum(2, 3)).toEqual(5);
-//     })
-// })
 
 describe("tvshows reducer", () => {
     it("LOADING_STATE", () => {
         const action = {
-            type: types.LOADING_STATE
+            type: types.LOADING_STATE,
+            payload: false
         }
 
-        expect(reducer(initialState, action)).toEqual({
-            ...initialState,
-            isLoading: false
-        })
+        expect(isLoading(initialState.isLoading, action)).toEqual(
+            //...initialState,
+            action.payload
+        )
     })
 
     it("FETCH_FAILURE", () => {
@@ -31,11 +21,9 @@ describe("tvshows reducer", () => {
             payload: "500 server error"
         }
 
-        expect(reducer(initialState, action)).toEqual({
-            ...initialState,
-            isLoading: false,
-            error: action.payload
-        })
+        expect(fetchFailure(initialState.error, action)).toEqual(
+            action.payload
+        )
     })
 
     it("FETCH_TVSHOWS", () => {
@@ -44,11 +32,10 @@ describe("tvshows reducer", () => {
             payload: [1, 2, 3]
         }
 
-        expect(reducer(initialState, action)).toEqual({
-            ...initialState,
-            isLoading: false,
-            tvshows: action.payload
-        })
+        expect(tvshowReducer(initialState.tvshows, action)).toEqual([
+            ...initialState.tvshows,
+            ...action.payload
+        ])
     })
 
     it("SET_SORTING_CRITERION_NAME", () => {
@@ -57,9 +44,7 @@ describe("tvshows reducer", () => {
                 {name: 'one', vote_average: 7.3, first_air_date: "2020-03-21"},
                 {name: 'two', vote_average: 5.1, first_air_date: "2018-09-23"},
                 {name: 'three', vote_average: 4.5, first_air_date: "2015-11-08"}
-            ],
-            error: "",
-            isLoading: false,
+            ]
         }
 
         const action = {
@@ -67,10 +52,9 @@ describe("tvshows reducer", () => {
             payload: "name"
         }
 
-        expect(reducer(stateBefore, action)).toEqual({
-            ...stateBefore,
-            tvshows.sort((a, b) => a[action.payload] < b[action.payload] ? -1 : 1)
-        })
+        expect(tvshowReducer(stateBefore.tvshows, action)).toEqual(
+            stateBefore.tvshows.sort((a, b) => a[action.payload] < b[action.payload] ? -1 : 1)
+        )
     })
 
     it("SET_SORTING_CRITERION_VOTE_AVERAGE", () => {
@@ -79,9 +63,7 @@ describe("tvshows reducer", () => {
                 {name: 'one', vote_average: 7.3, first_air_date: "2020-03-21"},
                 {name: 'two', vote_average: 5.1, first_air_date: "2018-09-23"},
                 {name: 'three', vote_average: 4.5, first_air_date: "2015-11-08"}
-                ],
-            error: "",
-            isLoading: false,
+                ]
         }
 
         const action = {
@@ -89,10 +71,9 @@ describe("tvshows reducer", () => {
             payload: "vote_average"
         }
 
-        expect(reducer(stateBefore, action)).toEqual({
-            ...stateBefore,
-            tvshows.sort((a, b) => b[action.payload] - a[action.payload])
-        })
+        expect(tvshowReducer(stateBefore.tvshows, action)).toEqual(
+            stateBefore.tvshows.sort((a, b) => b[action.payload] - a[action.payload])
+        )
     })
 
     it("SET_SORTING_CRITERION_FIRST_AIR_DATE", () => {
@@ -101,9 +82,7 @@ describe("tvshows reducer", () => {
                 {name: 'one', vote_average: 7.3, first_air_date: "2020-03-21"},
                 {name: 'two', vote_average: 5.1, first_air_date: "2018-09-23"},
                 {name: 'three', vote_average: 4.5, first_air_date: "2015-11-08"}
-            ],
-            error: "",
-            isLoading: false,
+            ]
         }
 
         const action = {
@@ -111,10 +90,9 @@ describe("tvshows reducer", () => {
             payload: "first_air_date"
         }
 
-        expect(reducer(stateBefore, action)).toEqual({
-            ...stateBefore,
-            tvshows.sort((a, b) => a[action.payload] - b[action.payload])
-        })
+        expect(tvshowReducer(stateBefore.tvshows, action)).toEqual(
+            stateBefore.tvshows.sort((a, b) => b[action.payload].replace(/-/g, '') - a[action.payload].replace(/-/g, ''))
+        )
     })
 
 })

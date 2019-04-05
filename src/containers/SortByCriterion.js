@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setSortingCriterion } from '../actions';
+import { fetchSortingCriterion } from '../actions';
 import Criterion from '../components/Criterion';
 import { CriterionToSort } from '../actions';
 
@@ -31,7 +31,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     //console.log('from SortByCriterion, ', ownProps)  //sort by number
     //onClick: () => dispatch(setSortingCriterion(getSortedTable(ownProps.criterion)))
-    onClick: setSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
+    onClick: fetchSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
     //should send dispatch and a criterion to sort to action
 })
 
