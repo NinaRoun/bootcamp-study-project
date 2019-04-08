@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Pagination = ({ onClick, className, number}) => {
+const Pagination = ({ onClick, className, number }) => {
 
         return(
             <span
-                onClick={onClick.bind(this, number)}
+                onClick={onClick.bind( this, number )}
                 className={ className }
             >
                 { number }
