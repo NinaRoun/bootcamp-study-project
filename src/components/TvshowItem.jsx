@@ -5,21 +5,11 @@ import PropTypes from "prop-types";
 const TvshowItem = ({tvshow, search}) => {
 
     const imgSrc = 'https://image.tmdb.org/t/p/w200' + tvshow.poster_path;
-    // search && console.log('search has changed for ' + search);
-    // const regexp = new RegExp(search, 'g');
-    // const container = document.createElement("span");
-    // const toBeWrapped = document.querySelectorAll(".red-highlighting");
-    // for (let t = 0; t < toBeWrapped.length; t++)
-    //     container.appendChild(toBeWrapped[t]);
-    // search && console.log('regexp', regexp);
-
     const searchEscaped = search.replace(/[\\[.+*?(){|^$]/g, "\\$&");
+
     const getResultWithSearch = (searchedArea) => {
 
-        const arr = searchedArea.split(new RegExp(searchEscaped, "i"));
-        //let resultSearch = [];
-
-
+        const arr = searchedArea && searchedArea.split(new RegExp(searchEscaped, "i"));
         let symbolsParsed = 0;
         let result = [];
         for(let i = 0; i < arr.length; i++) {
@@ -34,20 +24,20 @@ const TvshowItem = ({tvshow, search}) => {
     return (
         <tr>
 
-            <th> № { tvshow.id } </th>
+            <th id="tv-id"> № {tvshow.id} </th>
 
             <th>
-                <h2> { getResultWithSearch(tvshow.name) } </h2>
-                <h3> Country: { tvshow.origin_country } </h3>
-                <h3> Original Language: { tvshow.original_language } </h3>
-                <p> { getResultWithSearch(tvshow.overview) } </p>
+                <h2 id="tv-name"> {getResultWithSearch(tvshow.name)} </h2>
+                <h3 id="tv-origin"> Country: { tvshow.origin_country } </h3>
+                <h3 id="tv-language"> Original Language: { tvshow.original_language } </h3>
+                <p id="tv-overview"> { getResultWithSearch(tvshow.overview) } </p>
             </th>
 
             <th> <img src={imgSrc} alt={tvshow.name}/> </th>
 
             <th>
-                Rate: { tvshow.vote_average }/10
-                <p> Voted { tvshow.vote_count } times</p>
+                <span id="tv-vote"> Rate: { tvshow.vote_average }/10 </span>
+                <p id="tv-vote-count"> Voted { tvshow.vote_count } times </p>
              </th>
         </tr>
     );

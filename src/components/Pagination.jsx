@@ -5,7 +5,7 @@ const Pagination = ({ onClick, className, number }) => {
 
         return(
             <span
-                onClick={onClick.bind( this, number )}
+                onClick={onClick.bind(this, number)}
                 className={ className }
             >
                 { number }

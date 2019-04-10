@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Error = ({error}) => (
+const Error = ({ error }) => (
     <div>
-        <strong>{ error }</strong>
+        <strong>{error}</strong>
     </div>
 )
 

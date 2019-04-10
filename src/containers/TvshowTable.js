@@ -25,7 +25,6 @@ class TvshowTable extends Component {
     }
 
     handleClick(page) {
-        //console.log('current page is ', this.state.currentPage););
         this.setState({
             currentPage: Number(page)
         })
@@ -35,31 +34,20 @@ class TvshowTable extends Component {
         this.setState({
             search: event.currentTarget.value
         })
-
     }
 
     componentWillMount() {
         fetchTvshows()(this.props.dispatch);
-        // let pageNumbers = [];
-        // const tableItems = document.getElementsByTagName("tr");
-        // console.log('tableItems length = ', tableItems.length);
-        // console.log('search ', this.state.search);
-        // for(let i = 1; i <= Math.ceil(tableItems.length / this.state.showsPerPage); i++){
-        //     pageNumbers.push(i);
-        // }
-        // this.setState({pageNumbers});
     }
 
     render() {
 
         const {currentPage, showsPerPage, search} = this.state;
-        console.log(this.props);
 
         const allShows = !this.state.search ? this.props.tvshows : this.props.tvshows.filter(tvshow => !this.state.search ||
             tvshow.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1 ||
             tvshow.overview.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
         );
-        //console.log('all shows', allShows)
 
         const indexOfLastShow = currentPage * showsPerPage;  //6, 12, 18, ...
         const indexOfFirstShow = indexOfLastShow - showsPerPage; //0, 6, 12, ...
