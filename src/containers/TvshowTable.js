@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 import { fetchTvshows } from '../actions'
 import SortingCriteria from '../components/SortingCriteria';
 import TvshowItem from '../components/TvshowItem';
