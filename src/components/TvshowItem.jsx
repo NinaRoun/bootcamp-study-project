@@ -14,12 +14,12 @@ const TvshowItem = ({tvshow, search}) => {
         let result = [];
         for(let i = 0; i < arr.length; i++) {
             result.push(arr[i]);
-            result.push((<span key={i} className={style.searchHighlighting}>{searchedArea.substr(arr[i].length + symbolsParsed, search.length)}</span>));
+            result.push((<span key={i} id="searchedArea" className={style.searchHighlighting}>{searchedArea.substr(arr[i].length + symbolsParsed, search.length)}</span>));
             symbolsParsed += (arr[i].length + search.length);
         }
         return result;
 
-    }
+    };
 
     return (
         <tr>

@@ -1,9 +1,9 @@
-
 export const initialState = {
     tvshows: [],
     error: "",
     isLoading: true,
 };
+
 export const tvshowReducer = (state = initialState.tvshows, action) => {
     switch (action.type) {
 

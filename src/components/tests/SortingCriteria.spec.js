@@ -21,9 +21,19 @@ describe('components', () => {
             const { enzymeWrapper } = setup();
             //console.log(enzymeWrapper.debug());
             expect(enzymeWrapper.find('strong').text()).toBe('Sort by:');
+            //expect(enzymeWrapper.find('span')).toHaveProperty('className');
+            //expect(enzymeWrapper.find('Connect(Criterion)').get(0)).toHaveProperty('criterion', 'SORT_BY_NUMBER');
+            //expect(enzymeWrapper.find('Connect(Criterion)').get(0).contains(<Connect(Criterion) criterion="SORT_BY_NUMBER">Number</Connect(Criterion)>)).toEqual(true);
+            //expect(enzymeWrapper.find('Connect(Criterion)').get(0).contains('<Connect(Criterion) criterion="SORT_BY_NUMBER">Number</Connect(Criterion)>')).toEqual(true);
+            //const component = enzymeWrapper.find('Connect(Criterion)').get(0);
+            //console.log('component = ' + component);
+            //expect(component.prop('criterion')).toEqual('SORT_BY_NUMBER');
             expect(enzymeWrapper.find('Connect(Criterion)')).toHaveLength(4);
+            // enzymeWrapper.find('Connect(Criterion)').forEach( (node) => {
+            //     expect(node.props.toHaveProperty('criterion')).toEqual(true)
+            // })
         })
     })
-})
+});
 
 

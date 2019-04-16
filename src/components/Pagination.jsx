@@ -11,12 +11,12 @@ const Pagination = ({ onClick, className, number }) => {
                 { number }
             </span>
         )
-}
+};
 
 Pagination.propTypes = {
     onClick: PropTypes.func.isRequired,
     className: PropTypes.string.isRequired,
     number: PropTypes.number.isRequired
-}
+};
 
 export default Pagination;
