@@ -1,0 +1,716 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders properly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TvshowTable
+    error=""
+    fetchTvShows={[Function]}
+    isLoading={false}
+    tvshows={
+      Array [
+        Object {
+          "first_air_date": "2020-03-21",
+          "id": 1,
+          "name": "one",
+          "origin_country": "US",
+          "original_language": "English",
+          "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+          "vote_average": 7.3,
+          "vote_count": 250,
+        },
+        Object {
+          "first_air_date": "2020-03-21",
+          "id": 2,
+          "name": "two",
+          "origin_country": "US",
+          "original_language": "English",
+          "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+          "vote_average": 7.3,
+          "vote_count": 250,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="pageContent"
+      >
+        <div>
+          <SortingCriteria />
+          <Search
+            onChange={[Function]}
+          />
+        </div>
+        <table>
+          <tbody>
+            <TvshowItem
+              search=""
+              tvshow={
+                Object {
+                  "first_air_date": "2020-03-21",
+                  "id": 1,
+                  "name": "one",
+                  "origin_country": "US",
+                  "original_language": "English",
+                  "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                  "vote_average": 7.3,
+                  "vote_count": 250,
+                }
+              }
+            />
+            <TvshowItem
+              search=""
+              tvshow={
+                Object {
+                  "first_air_date": "2020-03-21",
+                  "id": 2,
+                  "name": "two",
+                  "origin_country": "US",
+                  "original_language": "English",
+                  "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                  "vote_average": 7.3,
+                  "vote_count": 250,
+                }
+              }
+            />
+          </tbody>
+        </table>
+        <div>
+          <Pagination
+            className="hui"
+            id={1}
+            number={1}
+            onClick={[Function]}
+          />
+        </div>
+      </div>,
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <SortingCriteria />
+            <Search
+              onChange={[Function]}
+            />
+          </div>,
+          <table>
+            <tbody>
+              <TvshowItem
+                search=""
+                tvshow={
+                  Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 1,
+                    "name": "one",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  }
+                }
+              />
+              <TvshowItem
+                search=""
+                tvshow={
+                  Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 2,
+                    "name": "two",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  }
+                }
+              />
+            </tbody>
+          </table>,
+          <div>
+            <Pagination
+              className="hui"
+              id={1}
+              number={1}
+              onClick={[Function]}
+            />
+          </div>,
+        ],
+        "className": "pageContent",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <SortingCriteria />,
+              <Search
+                onChange={[Function]}
+              />,
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onChange": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <tbody>
+              <TvshowItem
+                search=""
+                tvshow={
+                  Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 1,
+                    "name": "one",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  }
+                }
+              />
+              <TvshowItem
+                search=""
+                tvshow={
+                  Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 2,
+                    "name": "two",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  }
+                }
+              />
+            </tbody>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <TvshowItem
+                  search=""
+                  tvshow={
+                    Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 1,
+                      "name": "one",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    }
+                  }
+                />,
+                <TvshowItem
+                  search=""
+                  tvshow={
+                    Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 2,
+                      "name": "two",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    }
+                  }
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "function",
+                "props": Object {
+                  "search": "",
+                  "tvshow": Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 1,
+                    "name": "one",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "2",
+                "nodeType": "function",
+                "props": Object {
+                  "search": "",
+                  "tvshow": Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 2,
+                    "name": "two",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "tbody",
+          },
+          "type": "table",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Pagination
+                className="hui"
+                id={1}
+                number={1}
+                onClick={[Function]}
+              />,
+            ],
+            "id": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "function",
+              "props": Object {
+                "className": "hui",
+                "id": 1,
+                "number": 1,
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="pageContent"
+        >
+          <div>
+            <SortingCriteria />
+            <Search
+              onChange={[Function]}
+            />
+          </div>
+          <table>
+            <tbody>
+              <TvshowItem
+                search=""
+                tvshow={
+                  Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 1,
+                    "name": "one",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  }
+                }
+              />
+              <TvshowItem
+                search=""
+                tvshow={
+                  Object {
+                    "first_air_date": "2020-03-21",
+                    "id": 2,
+                    "name": "two",
+                    "origin_country": "US",
+                    "original_language": "English",
+                    "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    "vote_average": 7.3,
+                    "vote_count": 250,
+                  }
+                }
+              />
+            </tbody>
+          </table>
+          <div>
+            <Pagination
+              className="hui"
+              id={1}
+              number={1}
+              onClick={[Function]}
+            />
+          </div>
+        </div>,
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              <SortingCriteria />
+              <Search
+                onChange={[Function]}
+              />
+            </div>,
+            <table>
+              <tbody>
+                <TvshowItem
+                  search=""
+                  tvshow={
+                    Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 1,
+                      "name": "one",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    }
+                  }
+                />
+                <TvshowItem
+                  search=""
+                  tvshow={
+                    Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 2,
+                      "name": "two",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    }
+                  }
+                />
+              </tbody>
+            </table>,
+            <div>
+              <Pagination
+                className="hui"
+                id={1}
+                number={1}
+                onClick={[Function]}
+              />
+            </div>,
+          ],
+          "className": "pageContent",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <SortingCriteria />,
+                <Search
+                  onChange={[Function]}
+                />,
+              ],
+              "className": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onChange": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <tbody>
+                <TvshowItem
+                  search=""
+                  tvshow={
+                    Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 1,
+                      "name": "one",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    }
+                  }
+                />
+                <TvshowItem
+                  search=""
+                  tvshow={
+                    Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 2,
+                      "name": "two",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    }
+                  }
+                />
+              </tbody>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <TvshowItem
+                    search=""
+                    tvshow={
+                      Object {
+                        "first_air_date": "2020-03-21",
+                        "id": 1,
+                        "name": "one",
+                        "origin_country": "US",
+                        "original_language": "English",
+                        "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                        "vote_average": 7.3,
+                        "vote_count": 250,
+                      }
+                    }
+                  />,
+                  <TvshowItem
+                    search=""
+                    tvshow={
+                      Object {
+                        "first_air_date": "2020-03-21",
+                        "id": 2,
+                        "name": "two",
+                        "origin_country": "US",
+                        "original_language": "English",
+                        "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                        "vote_average": 7.3,
+                        "vote_count": 250,
+                      }
+                    }
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "function",
+                  "props": Object {
+                    "search": "",
+                    "tvshow": Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 1,
+                      "name": "one",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "2",
+                  "nodeType": "function",
+                  "props": Object {
+                    "search": "",
+                    "tvshow": Object {
+                      "first_air_date": "2020-03-21",
+                      "id": 2,
+                      "name": "two",
+                      "origin_country": "US",
+                      "original_language": "English",
+                      "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                      "vote_average": 7.3,
+                      "vote_count": 250,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "tbody",
+            },
+            "type": "table",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Pagination
+                  className="hui"
+                  id={1}
+                  number={1}
+                  onClick={[Function]}
+                />,
+              ],
+              "id": undefined,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "function",
+                "props": Object {
+                  "className": "hui",
+                  "id": 1,
+                  "number": 1,
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

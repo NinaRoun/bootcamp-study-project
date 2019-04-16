@@ -10,16 +10,16 @@ import style from '../stylesheets/main.styl';
 import Error from '../components/Error';
 
 
-class TvshowTable extends Component {
+export class TvshowTable extends Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             currentPage: 1,
             showsPerPage: 6,
             search: "",
             pageNumbers: [],
-        }
+        };
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -78,7 +78,7 @@ class TvshowTable extends Component {
 
                 {this.props.isLoading ? <Loading /> : this.props.error ? <Error error={this.props.error} /> :
 
-                    <div>
+                    <div className="pageContent">
                         <div className={style.options}>
                             <SortingCriteria />
                             <Search onChange={this.handleChange.bind(this)}/>
