@@ -1,7 +1,6 @@
 import React from 'react';
 import Enzyme, { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import sinon from 'sinon';
 import TvshowTable from '../TvshowTable.js';
 import {fetchTvshows} from "../../actions";
 
@@ -9,44 +8,89 @@ configure({ adapter: new Adapter() });
 
 function setup() {
     const props = {
-        tvshows: [1, 2, 3],
+        tvshows: [],
         isLoading: false,
         error: "500 server error",
-        fetchTvshows: () => {}
-    }
+        fetchTvShows: () => {}
+    };
 
-    // const mockFetchGetShows = jest.fn()
-    // const nextProps = {
-    //     ...props.tvshows,
-    //     fetchTvshows: mockFetchGetShows
-    // }
-
-    const enzymeWrapper = shallow(<TvshowTable {...props} />);
+    //const enzymeWrapper = shallow(<TvshowTable {...props} />);
 
     return {
         props,
-        enzymeWrapper
+        //enzymeWrapper
     }
 }
 
+//-----------------------------------------------------------
+
+const thunk = ({ dispatch, getState }) => next => action => {
+    if (typeof action === 'function') {
+        return action(dispatch, getState)
+    }
+
+    return next(action)
+};
+
+const create = () => {
+    const store = {
+        getState: jest.fn(() => ({})),
+        dispatch: jest.fn()
+    };
+    const next = jest.fn();
+    const invoke = action => thunk(store)(next)(action);
+    return { store, next, invoke }
+};
+
+it('passes through non-function action', () => {
+    const { next, invoke } = create();
+    const action = { type: 'TEST' };
+    invoke(action);
+    expect(next).toHaveBeenCalledWith(action)
+});
+
+it('calls the function', () => {
+    const { props } = setup();
+    const mockFetchGetShows = jest.fn();
+    const nextProps = {
+        ...props,
+        fetchTvShows: mockFetchGetShows
+    };
+
+    const { invoke } = create();
+    invoke(mockFetchGetShows);
+    expect(mockFetchGetShows).toHaveBeenCalledTimes(1)
+});
+
+it('passes dispatch and getState', () => {
+    const { store, invoke } = create();
+    invoke((dispatch, getState) => {
+        dispatch('TEST DISPATCH');
+        getState()
+    });
+    expect(store.dispatch).toHaveBeenCalledWith('TEST DISPATCH');
+    expect(store.getState).toHaveBeenCalled()
+});
+
+//-----------------------------------------------------------
+
 describe('components', () => {
-    describe('TvshowTable', () => {
-        it('should render self and subcomponents', () => {
-            const { enzymeWrapper } = setup();
-            console.log(enzymeWrapper.debug());
-            // expect(enzymeWrapper.hasClass('active')).toBe(true);
-            // expect(enzymeWrapper.find('span').text()).toBe('1');
-
+    describe('initial TvshowTable', () => {
+        const { props } = setup();
+        // const mockFetchGetShows = jest.fn();
+        // const nextProps = {
+        //     ...props,
+        //     fetchTvShows: mockFetchGetShows
+        // };
+        //
+        // const enzymeWrapper = shallow(<TvshowTable {...nextProps} />);
+        //
+        it('dispatches the `fetchTvShows()` method', () => {
+        //     expect(mockFetchGetShows).toHaveBeenCalledTimes(1)
+        //     expect(fetchTvshows.mock.calls.length).toEqual(1)
         })
 
-        it('simulates click events', () => {
-            const { enzymeWrapper, props } = setup();
-            // const onPageClick = sinon.spy();
-            // const wrapper = shallow(<Pagination onPageClick={onPageClick.bind(this, 1)} />);
-            // wrapper.find('span').simulate('click');
-            // expect(onPageClick).to.have.property('callCount', 1);
-        })
     })
-})
+});
 
 

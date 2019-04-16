@@ -37,7 +37,7 @@ class TvshowTable extends Component {
     }
 
     componentWillMount() {
-        fetchTvshows()(this.props.dispatch);
+        this.props.fetchTvShows();
     }
 
     render() {
@@ -71,7 +71,7 @@ class TvshowTable extends Component {
                     number={number}
                     onClick={this.handleClick}
                     className={number === this.state.currentPage ? style.active : ""}
-                />)})
+                />)});
 
         return (
             <div className={style.mainTable}>
@@ -110,9 +110,12 @@ const mapStateToProps = state => ({
     error: state.error
 });
 
-const mapDispatchToProps = dispatch => ({
-    dispatch,
-})
+const mapDispatchToProps = dispatch => {
+    console.log(dispatch, typeof fetchTvshows());
+    return {
+        fetchTvShows: () => dispatch(fetchTvshows())
+    }
+};
 
 export default connect(
     mapStateToProps,

@@ -9,29 +9,30 @@ export const CriterionToSort = {
     SORT_BY_NAME: 'SORT_BY_NAME',
     SORT_BY_RATE: 'SORT_BY_RATE',
     SORT_BY_DATE: 'SORT_BY_DATE'
-}
+};
 
 export const fetchDataResults = (data) => ({
     type: types.FETCH_TVSHOWS,
     payload: data
-})
+});
 
 export const fetchFailure = () => ({
     type: types.FETCH_FAILURE,
     payload: errorMsg
-})
+});
 
 export const setLoadingState = () => ({
     type: types.LOADING_STATE,
     payload: false
-})
+});
 
 export const setSortingCriterion = (criterion) => ({
     type: types.SET_SORTING_CRITERION,
     payload: criterion
-})
+});
 
-export const fetchTvshows = () => dispatch => {
+export const fetchTvshows = () => (dispatch) => {
+    //console.log('check dispatch', dispatch);
     axios.get(apiURL)
         .then( response => {
             //console.log(response.data.results);
@@ -47,7 +48,7 @@ export const fetchTvshows = () => dispatch => {
             dispatch(setLoadingState())
         });
 
-}
+};
 
 export const fetchSortingCriterion = () => (dispatch, criterion) => {
     //console.log('in action setSortingCriterion, got a criterion - ', criterion)
