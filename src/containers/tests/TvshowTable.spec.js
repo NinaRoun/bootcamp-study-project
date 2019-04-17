@@ -32,11 +32,10 @@ function setup() {
         fetchTvShows: () => {}
     };
 
-    const enzymeWrapper = shallow(<TvshowTable {...props} />);
+    //const enzymeWrapper = shallow(<TvshowTable {...props} />);
 
     return {
-        props,
-        enzymeWrapper
+        props
     }
 }
 
@@ -58,48 +57,51 @@ const create = () => {
     return { store, next, invoke }
 };
 
-// it('passes through non-function action', () => {
-//     const { next, invoke } = create();
-//     const action = { type: 'TEST' };
-//     invoke(action);
-//     expect(next).toHaveBeenCalledWith(action)
-// });
-
-it('renders properly', () => {
-    const { enzymeWrapper } = setup();
-    //console.log(enzymeWrapper.debug());
-    expect(enzymeWrapper).toMatchSnapshot();
-    //console.log(enzymeWrapper.children().debug());
-    // const mockFetchGetShows = jest.fn();
-    // const nextProps = {
-    //     ...props,
-    //     fetchTvShows: mockFetchGetShows
-    // };
-    //expect(enzymeWrapper).toHaveLength(1);
-});
-
-it('calls the function', () => {
-    const { props } = setup();
+describe('Tvshow container initial', () => {
     const mockFetchGetShows = jest.fn();
+    const { props } = setup();
     const nextProps = {
         ...props,
         fetchTvShows: mockFetchGetShows
     };
+    const enzymeWrapper = shallow(<TvshowTable {...nextProps} />);
 
-    const { invoke } = create();
-    invoke(mockFetchGetShows);
-    expect(mockFetchGetShows).toHaveBeenCalledTimes(1)
+    it('renders properly', () => {
+        expect(enzymeWrapper).toMatchSnapshot();
+    });
+
+    it('calls the `fetchTvShows` function', () => {
+        expect(mockFetchGetShows).toHaveBeenCalledTimes(1)
+    });
 });
 
-// it('passes dispatch and getState', () => {
-//     const { store, invoke } = create();
-//     invoke((dispatch, getState) => {
-//         dispatch('TEST DISPATCH');
-//         getState()
-//     });
-//     expect(store.dispatch).toHaveBeenCalledWith('TEST DISPATCH');
-//     expect(store.getState).toHaveBeenCalled()
-// });
+describe('Tvshow preloader', () => {
+    const { props } = setup();
+    const nextProps = {
+        ...props,
+        isLoading: true
+    };
+    const enzymeWrapper = shallow(<TvshowTable {...nextProps} />);
+
+    it('renders properly', () => {
+        const loadingComponent = enzymeWrapper.find('Loading');
+        expect(loadingComponent).toHaveLength(1);
+    });
+});
+
+describe('Error while fetching', () => {
+    const { props } = setup();
+    const nextProps = {
+        ...props,
+        error: '500 server error'
+    };
+    const enzymeWrapper = shallow(<TvshowTable {...nextProps} />);
+
+    it('renders properly', () => {
+        const errorComponent = enzymeWrapper.find('Error');
+        expect(errorComponent).toHaveLength(1);
+    });
+});
 
 
 

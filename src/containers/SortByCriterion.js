@@ -6,24 +6,24 @@ import { CriterionToSort } from '../actions';
 const getSortedTable = (criterion) => {
     switch (criterion) {
         case CriterionToSort.SORT_BY_NUMBER:
-            return 'id'
+            return 'id';
         case CriterionToSort.SORT_BY_NAME:
-            return 'name'
+            return 'name';
         case CriterionToSort.SORT_BY_RATE:
-            return 'vote_average'
+            return 'vote_average';
         case CriterionToSort.SORT_BY_DATE:
-            return 'first_air_date'
+            return 'first_air_date';
         default:
             throw new Error('Choose criterion to sort')
     }
-}
+};
 const mapStateToProps = (state, ownProps) => ({
     tvshows: state.tvshows,
-})
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: fetchSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
-})
+});
 
 export default connect(
     mapStateToProps,
