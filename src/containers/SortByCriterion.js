@@ -17,16 +17,16 @@ const getSortedTable = (criterion) => {
             throw new Error('Choose criterion to sort')
     }
 };
-const mapStateToProps = (state, ownProps) => ({
+/*const mapStateToProps = (state, ownProps) => ({
     tvshows: state.tvshows,
-});
+});*/
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: fetchSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
 });
 
 export default connect(
-    mapStateToProps,
+  //  mapStateToProps,
     mapDispatchToProps
 )(Criterion)
 

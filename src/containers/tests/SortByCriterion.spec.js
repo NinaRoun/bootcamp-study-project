@@ -5,18 +5,32 @@ import Adapter from 'enzyme-adapter-react-16';
 import configureStore from 'redux-mock-store';
 import { mount } from 'enzyme';
 import SortByCriterion from '../SortByCriterion.js';
-import {CriterionToSort, fetchSortingCriterion} from "../../actions";
+import Criterion from '../../components/Criterion';
 
 configure({ adapter: new Adapter() });
 
+const create = () => {
+    const store = {
+        getState: jest.fn(() => ({})),
+        dispatch: jest.fn(),
+        subscribe: jest.fn(),
+    };
+    const next = jest.fn();
+    //const invoke = action => thunk(store)(next)(action);
+    return { store, next }
+};
+
 function setup() {
+    const { store } = create();
+    const mockSortShows = jest.fn();
     const props = {
         children: "name",
-        onClick: () => ({})
+        onClick: mockSortShows,
     };
 
     return {
-        props
+        props,
+        mockSortShows
     }
 }
 //
@@ -28,15 +42,6 @@ function setup() {
 //     return next(action)
 // };
 //
-const create = () => {
-    const store = {
-        getState: jest.fn(() => ({})),
-        dispatch: jest.fn()
-    };
-    const next = jest.fn();
-    const invoke = action => thunk(store)(next)(action);
-    return { store, next, invoke }
-};
 
 const shallowWithStore = (component, store) => {
     const context = {
@@ -86,17 +91,19 @@ it('calls the `onClick` function to sort the table', () => {
     //     expect(action[0].type).toBe("SET_SORTING_CRITERION");
     // });
 
-    const { props } = setup();
+    const { props, mockSortShows } = setup();
     //const mockFetchSortingCriterion = jest.fn();
-    const { store, invoke } = create();
+    const { store, dispatch } = create();
     //const enzymeWrapper = shallowWithStore(<SortByCriterion />, store);
-    const enzymeWrapper = mount( <Provider criterion="SORT_BY_NUMBER" {...props} store={store}><SortByCriterion /></Provider>);
+    const enzymeWrapper = mount( <Provider store={store}><Criterion criterion="SORT_BY_NUMBER" {...props} /></Provider>);
     //const enzymeWrapper = shallow(<SortByCriterion store={store} />);
-    const someSpan = enzymeWrapper.dive().find("Criterion");
-    console.log(someSpan.debug());
-    //component.dive().find("form > div > input").simulate("change", { target: { value: "Site" } });
+    //console.log(enzymeWrapper.debug());
+    const someSpan = enzymeWrapper.find("span");
+    //const span = someSpan.find("span");
+    //console.log(someSpan.debug());
+    someSpan.simulate("click");
     // invoke(props.onClick(props.criterion));
-    // expect(props.onClick).toHaveBeenCalledTimes(1)
+    expect(mockSortShows).toHaveBeenCalledTimes(1)
 });
 
 
