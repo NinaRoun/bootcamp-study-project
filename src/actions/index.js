@@ -51,9 +51,8 @@ export const fetchTvshows = () => (dispatch) => {
 };
 
 export const fetchSortingCriterion = () => (dispatch, criterion) => {
-    //console.log('in action setSortingCriterion, got a criterion - ', criterion)
     return dispatch(setSortingCriterion(criterion))
-}
+};
 
 
 
