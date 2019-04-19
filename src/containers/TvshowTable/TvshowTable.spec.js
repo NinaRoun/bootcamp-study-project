@@ -1,8 +1,7 @@
 import React from 'react';
-import Enzyme, { shallow, configure } from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ConnectedTvshowTable, { TvshowTable } from '../TvshowTable.js';
-import {fetchTvshows} from "../../actions";
+import { TvshowTable } from './TvshowTable.js';
 
 configure({ adapter: new Adapter() });
 
@@ -32,30 +31,10 @@ function setup() {
         fetchTvShows: () => {}
     };
 
-    //const enzymeWrapper = shallow(<TvshowTable {...props} />);
-
     return {
         props
     }
 }
-
-const thunk = ({ dispatch, getState }) => next => action => {
-    if (typeof action === 'function') {
-        return action(dispatch, getState)
-    }
-
-    return next(action)
-};
-
-const create = () => {
-    const store = {
-        getState: jest.fn(() => ({})),
-        dispatch: jest.fn()
-    };
-    const next = jest.fn();
-    const invoke = action => thunk(store)(next)(action);
-    return { store, next, invoke }
-};
 
 describe('Tvshow container initial', () => {
     const mockFetchGetShows = jest.fn();

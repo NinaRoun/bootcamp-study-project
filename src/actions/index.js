@@ -32,16 +32,11 @@ export const setSortingCriterion = (criterion) => ({
 });
 
 export const fetchTvshows = () => (dispatch) => {
-    //console.log('check dispatch', dispatch);
     axios.get(apiURL)
         .then( response => {
-            //console.log(response.data.results);
-
             return dispatch(fetchDataResults(response.data.results))
-
         })
         .catch( error => {
-            //console.log(error)
             dispatch(fetchFailure())
         })
         .finally(() => {

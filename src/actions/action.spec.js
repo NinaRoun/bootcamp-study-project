@@ -7,7 +7,7 @@ describe("tvshows actions", () => {
         const expectedAction = {
             type: types.FETCH_TVSHOWS,
             payload: [1, 2, 3]
-        }
+        };
 
         expect(fetchDataResults(expectedAction.payload)).toEqual(expectedAction)
     });
@@ -16,7 +16,7 @@ describe("tvshows actions", () => {
         const expectedAction = {
             type: types.FETCH_FAILURE,
             payload: "An error has occurred while sending the request!"
-        }
+        };
 
         expect(fetchFailure(expectedAction.payload)).toEqual(expectedAction)
     });
@@ -25,7 +25,7 @@ describe("tvshows actions", () => {
         const expectedAction = {
             type: types.LOADING_STATE,
             payload: false
-        }
+        };
 
         expect(setLoadingState(expectedAction.payload)).toEqual(expectedAction)
     });
@@ -34,8 +34,8 @@ describe("tvshows actions", () => {
         const expectedAction = {
             type: types.SET_SORTING_CRITERION,
             payload: "some-criteria"
-        }
+        };
         expect(setSortingCriterion(expectedAction.payload)).toEqual(expectedAction)
     });
 
-})
+});

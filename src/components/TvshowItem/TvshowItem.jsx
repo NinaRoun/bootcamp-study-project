@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../stylesheets/main.styl';
+import style from '../../stylesheets/main.styl';
 import PropTypes from "prop-types";
 
 const TvshowItem = ({tvshow, search}) => {
@@ -41,11 +41,11 @@ const TvshowItem = ({tvshow, search}) => {
              </th>
         </tr>
     );
-}
+};
 
 TvshowItem.propTypes = {
     tvshow: PropTypes.object.isRequired
-}
+};
 
 export default TvshowItem;
 

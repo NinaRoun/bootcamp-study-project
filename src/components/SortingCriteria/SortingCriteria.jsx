@@ -1,7 +1,7 @@
 import React from 'react';
-import { CriterionToSort } from '../actions';
-import SortByCriterion from '../containers/SortByCriterion'
-import style from '../stylesheets/main.styl';
+import { CriterionToSort } from '../../actions';
+import SortByCriterion from '../../containers/SortByCriterion/SortByCriterion';
+import style from '../../stylesheets/main.styl';
 
 const SortingCriteria = () => {
 
@@ -14,6 +14,6 @@ const SortingCriteria = () => {
                 <SortByCriterion criterion={CriterionToSort.SORT_BY_DATE}>First Air Date</SortByCriterion>
             </span>
         )
-}
+};
 
 export default SortingCriteria;

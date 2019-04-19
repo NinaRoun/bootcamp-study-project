@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './stylesheets/main.styl';
 
-import TvshowTable from './containers/TvshowTable'
+import TvshowTable from './containers/TvshowTable/TvshowTable';
 
 class App extends Component {
   render() {

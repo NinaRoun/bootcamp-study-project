@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { fetchTvshows } from '../actions'
-import SortingCriteria from '../components/SortingCriteria';
-import TvshowItem from '../components/TvshowItem';
-import Pagination from '../components/Pagination';
-import Search from '../components/Search';
-import Loading from '../components/Loading';
-import style from '../stylesheets/main.styl';
-import Error from '../components/Error';
-
+import { fetchTvshows } from '../../actions'
+import SortingCriteria from '../../components/SortingCriteria/SortingCriteria';
+import TvshowItem from '../../components/TvshowItem/TvshowItem';
+import Pagination from '../../components/Pagination/Pagination';
+import Search from '../../components/Search/Search';
+import Loading from '../../components/Loading/Loading';
+import Error from '../../components/Error/Error';
+import style from '../../stylesheets/main.styl';
 
 export class TvshowTable extends Component {
 
@@ -110,12 +109,9 @@ const mapStateToProps = state => ({
     error: state.error
 });
 
-const mapDispatchToProps = dispatch => {
-    console.log(dispatch, typeof fetchTvshows());
-    return {
-        fetchTvShows: () => dispatch(fetchTvshows())
-    }
-};
+const mapDispatchToProps = dispatch => ({
+    fetchTvShows: () => dispatch(fetchTvshows())
+});
 
 export default connect(
     mapStateToProps,

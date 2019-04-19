@@ -1,17 +1,18 @@
 import React from 'react';
-import Enzyme, { shallow, configure } from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Criterion from '../Criterion.jsx';
+import Pagination from './Pagination.jsx';
 
 configure({ adapter: new Adapter() });
 
 function setup() {
     const props = {
-        children: "Criterion",
+        className: "active",
+        number: 1,
         onClick: jest.fn()
     };
 
-    const enzymeWrapper = shallow(<Criterion {...props} />);
+    const enzymeWrapper = shallow(<Pagination {...props} />);
 
     return {
         props,
@@ -20,10 +21,11 @@ function setup() {
 }
 
 describe('components', () => {
-    describe('Criterion', () => {
+    describe('Pagination', () => {
         it('should render self and subcomponents', () => {
             const { enzymeWrapper } = setup();
-            expect(enzymeWrapper.children()).toHaveLength(1);
+            expect(enzymeWrapper.hasClass('active')).toBe(true);
+            expect(enzymeWrapper.find('span').text()).toBe('1');
         });
 
         it('simulates click events', () => {

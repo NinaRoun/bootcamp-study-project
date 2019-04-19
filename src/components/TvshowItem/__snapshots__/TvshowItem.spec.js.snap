@@ -1,0 +1,871 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components TvshowItem should render self and subcomponents 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TvshowItem
+    search="searchedArea"
+    tvshow={
+      Object {
+        "first_air_date": "2020-03-21",
+        "id": 1,
+        "name": "one",
+        "origin_country": "US",
+        "original_language": "English",
+        "overview": "Lorem ipsum dolor sit amet, searchedArea consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+        "vote_average": 7.3,
+        "vote_count": 250,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <th
+          id="tv-id"
+        >
+           № 
+          1
+           
+        </th>,
+        <th>
+          <h2
+            id="tv-name"
+          >
+             
+            one
+            <span
+              id="searchedArea"
+            >
+              
+            </span>
+             
+          </h2>
+          <h3
+            id="tv-origin"
+          >
+             Country: 
+            US
+             
+          </h3>
+          <h3
+            id="tv-language"
+          >
+             Original Language: 
+            English
+             
+          </h3>
+          <p
+            id="tv-overview"
+          >
+             
+            Lorem ipsum dolor sit amet, 
+            <span
+              id="searchedArea"
+            >
+              searchedArea
+            </span>
+             consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            <span
+              id="searchedArea"
+            >
+              
+            </span>
+             
+          </p>
+        </th>,
+        <th>
+           
+          <img
+            alt="one"
+            src="https://image.tmdb.org/t/p/w200undefined"
+          />
+           
+        </th>,
+        <th>
+          <span
+            id="tv-vote"
+          >
+             Rate: 
+            7.3
+            /10 
+          </span>
+          <p
+            id="tv-vote-count"
+          >
+             Voted 
+            250
+             times 
+          </p>
+        </th>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            " № ",
+            1,
+            " ",
+          ],
+          "id": "tv-id",
+        },
+        "ref": null,
+        "rendered": Array [
+          " № ",
+          1,
+          " ",
+        ],
+        "type": "th",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2
+              id="tv-name"
+            >
+               
+              one
+              <span
+                id="searchedArea"
+              >
+                
+              </span>
+               
+            </h2>,
+            <h3
+              id="tv-origin"
+            >
+               Country: 
+              US
+               
+            </h3>,
+            <h3
+              id="tv-language"
+            >
+               Original Language: 
+              English
+               
+            </h3>,
+            <p
+              id="tv-overview"
+            >
+               
+              Lorem ipsum dolor sit amet, 
+              <span
+                id="searchedArea"
+              >
+                searchedArea
+              </span>
+               consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              <span
+                id="searchedArea"
+              >
+                
+              </span>
+               
+            </p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                Array [
+                  "one",
+                  <span
+                    id="searchedArea"
+                  >
+                    
+                  </span>,
+                ],
+                " ",
+              ],
+              "id": "tv-name",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              "one",
+              Object {
+                "instance": null,
+                "key": "0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": undefined,
+                  "id": "searchedArea",
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "span",
+              },
+              " ",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " Country: ",
+                "US",
+                " ",
+              ],
+              "id": "tv-origin",
+            },
+            "ref": null,
+            "rendered": Array [
+              " Country: ",
+              "US",
+              " ",
+            ],
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " Original Language: ",
+                "English",
+                " ",
+              ],
+              "id": "tv-language",
+            },
+            "ref": null,
+            "rendered": Array [
+              " Original Language: ",
+              "English",
+              " ",
+            ],
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " ",
+                Array [
+                  "Lorem ipsum dolor sit amet, ",
+                  <span
+                    id="searchedArea"
+                  >
+                    searchedArea
+                  </span>,
+                  " consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                  <span
+                    id="searchedArea"
+                  >
+                    
+                  </span>,
+                ],
+                " ",
+              ],
+              "id": "tv-overview",
+            },
+            "ref": null,
+            "rendered": Array [
+              " ",
+              "Lorem ipsum dolor sit amet, ",
+              Object {
+                "instance": null,
+                "key": "0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "searchedArea",
+                  "className": undefined,
+                  "id": "searchedArea",
+                },
+                "ref": null,
+                "rendered": "searchedArea",
+                "type": "span",
+              },
+              " consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+              Object {
+                "instance": null,
+                "key": "1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": undefined,
+                  "id": "searchedArea",
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "span",
+              },
+              " ",
+            ],
+            "type": "p",
+          },
+        ],
+        "type": "th",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            " ",
+            <img
+              alt="one"
+              src="https://image.tmdb.org/t/p/w200undefined"
+            />,
+            " ",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "one",
+              "src": "https://image.tmdb.org/t/p/w200undefined",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          " ",
+        ],
+        "type": "th",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              id="tv-vote"
+            >
+               Rate: 
+              7.3
+              /10 
+            </span>,
+            <p
+              id="tv-vote-count"
+            >
+               Voted 
+              250
+               times 
+            </p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " Rate: ",
+                7.3,
+                "/10 ",
+              ],
+              "id": "tv-vote",
+            },
+            "ref": null,
+            "rendered": Array [
+              " Rate: ",
+              7.3,
+              "/10 ",
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                " Voted ",
+                250,
+                " times ",
+              ],
+              "id": "tv-vote-count",
+            },
+            "ref": null,
+            "rendered": Array [
+              " Voted ",
+              250,
+              " times ",
+            ],
+            "type": "p",
+          },
+        ],
+        "type": "th",
+      },
+    ],
+    "type": "tr",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <th
+            id="tv-id"
+          >
+             № 
+            1
+             
+          </th>,
+          <th>
+            <h2
+              id="tv-name"
+            >
+               
+              one
+              <span
+                id="searchedArea"
+              >
+                
+              </span>
+               
+            </h2>
+            <h3
+              id="tv-origin"
+            >
+               Country: 
+              US
+               
+            </h3>
+            <h3
+              id="tv-language"
+            >
+               Original Language: 
+              English
+               
+            </h3>
+            <p
+              id="tv-overview"
+            >
+               
+              Lorem ipsum dolor sit amet, 
+              <span
+                id="searchedArea"
+              >
+                searchedArea
+              </span>
+               consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              <span
+                id="searchedArea"
+              >
+                
+              </span>
+               
+            </p>
+          </th>,
+          <th>
+             
+            <img
+              alt="one"
+              src="https://image.tmdb.org/t/p/w200undefined"
+            />
+             
+          </th>,
+          <th>
+            <span
+              id="tv-vote"
+            >
+               Rate: 
+              7.3
+              /10 
+            </span>
+            <p
+              id="tv-vote-count"
+            >
+               Voted 
+              250
+               times 
+            </p>
+          </th>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              " № ",
+              1,
+              " ",
+            ],
+            "id": "tv-id",
+          },
+          "ref": null,
+          "rendered": Array [
+            " № ",
+            1,
+            " ",
+          ],
+          "type": "th",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2
+                id="tv-name"
+              >
+                 
+                one
+                <span
+                  id="searchedArea"
+                >
+                  
+                </span>
+                 
+              </h2>,
+              <h3
+                id="tv-origin"
+              >
+                 Country: 
+                US
+                 
+              </h3>,
+              <h3
+                id="tv-language"
+              >
+                 Original Language: 
+                English
+                 
+              </h3>,
+              <p
+                id="tv-overview"
+              >
+                 
+                Lorem ipsum dolor sit amet, 
+                <span
+                  id="searchedArea"
+                >
+                  searchedArea
+                </span>
+                 consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                <span
+                  id="searchedArea"
+                >
+                  
+                </span>
+                 
+              </p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  Array [
+                    "one",
+                    <span
+                      id="searchedArea"
+                    >
+                      
+                    </span>,
+                  ],
+                  " ",
+                ],
+                "id": "tv-name",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                "one",
+                Object {
+                  "instance": null,
+                  "key": "0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "",
+                    "className": undefined,
+                    "id": "searchedArea",
+                  },
+                  "ref": null,
+                  "rendered": "",
+                  "type": "span",
+                },
+                " ",
+              ],
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " Country: ",
+                  "US",
+                  " ",
+                ],
+                "id": "tv-origin",
+              },
+              "ref": null,
+              "rendered": Array [
+                " Country: ",
+                "US",
+                " ",
+              ],
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " Original Language: ",
+                  "English",
+                  " ",
+                ],
+                "id": "tv-language",
+              },
+              "ref": null,
+              "rendered": Array [
+                " Original Language: ",
+                "English",
+                " ",
+              ],
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " ",
+                  Array [
+                    "Lorem ipsum dolor sit amet, ",
+                    <span
+                      id="searchedArea"
+                    >
+                      searchedArea
+                    </span>,
+                    " consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                    <span
+                      id="searchedArea"
+                    >
+                      
+                    </span>,
+                  ],
+                  " ",
+                ],
+                "id": "tv-overview",
+              },
+              "ref": null,
+              "rendered": Array [
+                " ",
+                "Lorem ipsum dolor sit amet, ",
+                Object {
+                  "instance": null,
+                  "key": "0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "searchedArea",
+                    "className": undefined,
+                    "id": "searchedArea",
+                  },
+                  "ref": null,
+                  "rendered": "searchedArea",
+                  "type": "span",
+                },
+                " consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                Object {
+                  "instance": null,
+                  "key": "1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "",
+                    "className": undefined,
+                    "id": "searchedArea",
+                  },
+                  "ref": null,
+                  "rendered": "",
+                  "type": "span",
+                },
+                " ",
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "th",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              " ",
+              <img
+                alt="one"
+                src="https://image.tmdb.org/t/p/w200undefined"
+              />,
+              " ",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "one",
+                "src": "https://image.tmdb.org/t/p/w200undefined",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            " ",
+          ],
+          "type": "th",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                id="tv-vote"
+              >
+                 Rate: 
+                7.3
+                /10 
+              </span>,
+              <p
+                id="tv-vote-count"
+              >
+                 Voted 
+                250
+                 times 
+              </p>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " Rate: ",
+                  7.3,
+                  "/10 ",
+                ],
+                "id": "tv-vote",
+              },
+              "ref": null,
+              "rendered": Array [
+                " Rate: ",
+                7.3,
+                "/10 ",
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  " Voted ",
+                  250,
+                  " times ",
+                ],
+                "id": "tv-vote-count",
+              },
+              "ref": null,
+              "rendered": Array [
+                " Voted ",
+                250,
+                " times ",
+              ],
+              "type": "p",
+            },
+          ],
+          "type": "th",
+        },
+      ],
+      "type": "tr",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

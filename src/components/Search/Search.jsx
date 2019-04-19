@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import style from '../stylesheets/main.styl';
+import style from '../../stylesheets/main.styl';
 
 const Search = ({ onChange }) => {
 
@@ -10,10 +10,10 @@ const Search = ({ onChange }) => {
                 <input type="search" onChange={onChange}/>
             </span>
         )
-}
+};
 
 Search.propTypes = {
     onChange: PropTypes.func.isRequired
-}
+};
 
 export default Search;

@@ -14,7 +14,6 @@ export const tvshowReducer = (state = initialState.tvshows, action) => {
             ];
 
         case 'SET_SORTING_CRITERION':
-            //console.log('in reducer to sort, action.payload = ', action.payload);
             const newState = state.slice(0);
             if(action.payload === 'name') {
                 newState.sort((a,b) => {
@@ -38,7 +37,7 @@ export const tvshowReducer = (state = initialState.tvshows, action) => {
             return state
     }
 
-}
+};
 
 export const isLoading = (state = initialState.isLoading, action) => {
     switch (action.type){
@@ -47,7 +46,7 @@ export const isLoading = (state = initialState.isLoading, action) => {
         default:
             return state;
     }
-}
+};
 
 export const fetchFailure = (state = initialState.error, action) => {
     switch (action.type){
@@ -57,8 +56,6 @@ export const fetchFailure = (state = initialState.error, action) => {
             return state;
     }
 }
-
-// export default tvshowReducer
 
 
 
