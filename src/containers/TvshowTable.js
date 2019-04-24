@@ -13,13 +13,13 @@ class TvshowTable extends Component {
 
     constructor(props) {
 
-        super(props)
+        super(props);
         this.state = {
             currentPage: 1,
             showsPerPage: 6,
             search: "",
             pageNumbers: [],
-        }
+        };
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -76,7 +76,7 @@ class TvshowTable extends Component {
                     number={number}
                     onClick={this.handleClick}
                     className={number === this.state.currentPage ? style.active : ""}
-                />)})
+                />)});
 
         return (
             <div className={style.mainTable}>
@@ -112,14 +112,14 @@ class TvshowTable extends Component {
 }
 
 const mapStateToProps = state => ({
-    tvshows: state.tvshows,
-    isLoading: state.isLoading,
-    error: state.error
+    tvshows: state.tvshowsData.tvshows,
+    isLoading: state.tvshowsData.isLoading,
+    error: state.tvshowsData.error
 });
 
 const mapDispatchToProps = dispatch => ({
     dispatch,
-})
+});
 
 export default connect(
     mapStateToProps,

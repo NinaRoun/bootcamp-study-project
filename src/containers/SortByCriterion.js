@@ -15,14 +15,15 @@ const getSortedTable = (criterion) => {
         default:
             throw new Error('Choose criterion to sort')
     }
-}
+};
+
 const mapStateToProps = (state, ownProps) => ({
-    tvshows: state.tvshows
-})
+    tvshows: state.tvshowsData.tvshows
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClick: setSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
-})
+});
 
 export default connect(
     mapStateToProps,
