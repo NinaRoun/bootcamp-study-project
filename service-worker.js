@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bootcamp-study-project/precache-manifest.21195bc65ba6a90915846cf977e2c9ff.js"
+  "/bootcamp-study-project/precache-manifest.4a3bfbed04c4dc5917f25ce181342946.js"
 );
 
 workbox.clientsClaim();
