@@ -32,7 +32,7 @@ export const tvshowReducer = (state = initialState.tvshowsData, action) => {
                 error: "",
             };
 
-        case 'SET_SORTING_CRITERION':
+        case types.SET_SORTING_CRITERION:
             const newState = state.tvshows.slice(0);
             if(action.payload === 'name') {
                 newState.sort((a,b) => {
