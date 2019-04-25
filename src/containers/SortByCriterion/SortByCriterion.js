@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchSortingCriterion, CriterionToSort } from '../../actions';
+import { setSortingCriterion, CriterionToSort } from '../../actions';
 import Criterion from '../../components/Criterion/Criterion';
 
 const getSortedTable = (criterion) => {
@@ -17,11 +17,11 @@ const getSortedTable = (criterion) => {
     }
 };
 const mapStateToProps = (state, ownProps) => ({
-    tvshows: state.tvshows,
+    tvshows: state.tvshowsData.tvshows,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    onClick: fetchSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
+    onClick: setSortingCriterion().bind(null, dispatch, getSortedTable(ownProps.criterion))
 });
 
 export default connect(

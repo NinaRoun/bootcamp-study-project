@@ -1,20 +1,39 @@
-export const initialState = {
-    tvshows: [],
-    error: "",
-    isLoading: true,
-};
+import * as types from '../actions/types';
 
-export const tvshowReducer = (state = initialState.tvshows, action) => {
+export const initialState = {
+    tvshowsData: {
+        tvshows: [],
+        error: "",
+        isLoading: false,
+    },
+};
+export const tvshowReducer = (state = initialState.tvshowsData, action) => {
     switch (action.type) {
 
-        case 'FETCH_TVSHOWS':
-            return [
+        case types.FETCH_TVSHOWS_REQUEST:
+            return {
                 ...state,
-                ...action.payload
-            ];
+                isLoading: true,
+                error: "",
+            };
+
+        case types.FETCH_TVSHOWS_FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload,
+            };
+
+        case types.FETCH_TVSHOWS_SUCCESS:
+            return {
+                ...state,
+                tvshows: [...state.tvshows, ...action.payload],
+                isLoading: false,
+                error: "",
+            };
 
         case 'SET_SORTING_CRITERION':
-            const newState = state.slice(0);
+            const newState = state.tvshows.slice(0);
             if(action.payload === 'name') {
                 newState.sort((a,b) => {
                     return a[action.payload] < b[action.payload] ? -1 : 1;
@@ -32,31 +51,13 @@ export const tvshowReducer = (state = initialState.tvshows, action) => {
                     return a[action.payload] - b[action.payload];
                 });
             }
-            return newState;
+            return {
+                ...state,
+                tvshows: newState
+            };
+
         default:
             return state
     }
 
 };
-
-export const isLoading = (state = initialState.isLoading, action) => {
-    switch (action.type){
-        case 'LOADING_STATE':
-            return action.payload;
-        default:
-            return state;
-    }
-};
-
-export const fetchFailure = (state = initialState.error, action) => {
-    switch (action.type){
-        case 'FETCH_FAILURE':
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
-
-
-

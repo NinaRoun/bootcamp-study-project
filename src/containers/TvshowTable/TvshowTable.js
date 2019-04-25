@@ -104,9 +104,9 @@ export class TvshowTable extends Component {
 }
 
 const mapStateToProps = state => ({
-    tvshows: state.tvshows,
-    isLoading: state.isLoading,
-    error: state.error
+    tvshows: state.tvshowsData.tvshows,
+    isLoading: state.tvshowsData.isLoading,
+    error: state.tvshowsData.error
 });
 
 const mapDispatchToProps = dispatch => ({

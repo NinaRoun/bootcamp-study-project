@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import {isLoading, tvshowReducer, fetchFailure} from './tvshowReducer';
+import { tvshowReducer } from './tvshowReducer';
 
 export default combineReducers({
-    tvshows: tvshowReducer,
-    error: fetchFailure,
-    isLoading,
+    tvshowsData: tvshowReducer,
 })
